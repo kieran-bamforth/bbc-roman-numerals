@@ -17,4 +17,16 @@ class RomanNumeralGenerator
             throw new \InvalidArgumentException('Expected numeric value for $number parameter.');
         }
     }
+
+    /**
+     * @param numeral
+     *
+     * @return string
+     */
+    public function toSubtractiveNotation($numeral)
+    {
+        if (!is_string($numeral)) {
+            throw new \InvalidArgumentException('Expected string value for $numeral parameter.');
+        }
+    }
 }
