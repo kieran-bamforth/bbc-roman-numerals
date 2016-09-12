@@ -9,6 +9,7 @@ class RomanNumeralGenerator
      * @param generate
      *
      * @throws \InvalidArgumentException if $number is not numeric.
+     * @throws \UnexpectedValueException if $number is not within the bounds 1 - 4000.
      *
      * @return string
      */
