@@ -35,7 +35,7 @@ class RomanNumeralGeneratorTest extends \PHPUnit_Framework_TestCase
             ['I', 1],
             ['V', 5],
             ['X', 10],
-            ['XX', XX],
+            ['XX', 20],
             ['MMMCMXCIX', 3999]
         ];
     }
