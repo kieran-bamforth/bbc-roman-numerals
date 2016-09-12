@@ -22,11 +22,24 @@ class RomanNumeralGeneratorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @expectedException \UnexpectedValueException
+     * @dataProvider notBetweenExpectedValuesProvider
+     */
+    public function test_generate_notBetweenExpectedValues($number)
+    {
+        $this->generator->generate($number);
+    }
+
+    public function notBetweenExpectedValuesProvider()
+    {
+        return [[0],[4000]];
+    }
+
+    /**
      * @dataProvider numeralNumberTestsProvider
      */
     public function test_generate_ok($expected, $number)
     {
-        $this->markTestSkipped('Will implement this soon');
         $this->assertEquals($expected, $this->generator->generate($number));
     }
 
@@ -38,35 +51,6 @@ class RomanNumeralGeneratorTest extends \PHPUnit_Framework_TestCase
             ['X', 10],
             ['XX', 20],
             ['MMMCMXCIX', 3999]
-        ];
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function test_getSubtractiveNotation_invalidString()
-    {
-        $this->generator->generate(false);
-    }
-
-    /**
-     * @dataProvider subtractiveNotationDataProvider
-     */
-    public function test_getSubtractiveNotation_ok($numeral)
-    {
-        $this->markTestSkipped('Will implement this soon');
-        $this->assertEquals($expected, $this->generator->toSubtractiveNotation($numeral));
-    }
-
-    public function subtractiveNotationDataProvider() 
-    {
-        return [
-            ['IV', 'IIII'],
-            ['IX', 'VIIII'],
-            ['XL', 'XXXX'],
-            ['XC', 'LXXXX'],
-            ['CD', 'CCCC'],
-            ['CM', 'DCCCC']
         ];
     }
 }

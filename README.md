@@ -5,4 +5,4 @@
 - With composer installed, the first thing I required was PHPUnit tests for two reasons:
 -- Testing becomes much quicker; I have a vim keyboard shortcut that will run the current test, thus reducing time taken to test.
 -- Code robustness, if the code breaks, I'll know.
-- I create the tests.
+- I create the tests, then implement the generate function.
